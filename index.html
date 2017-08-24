@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hogs for Weiner Dogs is an annual fundraiser for Diamond Dachshund Rescue of Texas">
+    <meta name="author" content="Michael Kneeland">
+    <title>Hogs for Weiner Dogs</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+    <style>
+        * { 
+            box-sizing: border-box;
+        }
+        img {
+            border-radius: 10px;
+        }
+        </style>
+</head>
+<body ng-app="h4wd">
+    <md-content style="background: darkgray" ng-controller="main as vm">
+    <header layout="row" layout-padding>
+        <div flex="50" layout-align="center center">
+        <img src="h4wd_logo.jpg" style="height: 200px; width: auto;"/>
+        </div>
+        <div flex="50" layout="row" layout-wrap>
+            <div flex="100" layout="row" layout-align="space-between center">
+                <span><a href="https://www.facebook.com/ddrtx?ref=hl"><img alt="" src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s3964nmlgnnibfjv.png" height="48" width="48"></a></span> 
+                <span><a href="https://www.instagram.com/diamonddachrescue/"><img alt="" src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s3964nu6tlx6xzzf.png" height="48" width="48"></a></span> 
+                <span><a href="https://twitter.com/DDRTX"><img alt="" src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s3964ng9rzz0whzm.png" height="48" width="48"></a></span>
+            </div>
+            <div flex="100" layout="row" layout-align="end center">
+                <span>
+                    <md-button ng-click="vm.toggleMenu()" class="md-primary" hide-gt-md>
+                        Menu
+                    </md-button>
+                </span>
+            </div>
+        </div>
+    </header>
+    <main layout="row" layout-padding layout-align="center" layout-wrap>
+        <div flex="85">
+            In our First Annual, Hogs for Wiener Dogs event, Diamond Dachshund Rescue, will bring both motorcyclist and drivers together
+            to enjoy a leisurely drive through the Hill Country to benefit the homeless dogs of our community cared for by
+            Diamond Dachshund. All proceeds will be used to provide much needed medical care for these abandoned and abused
+            Dachshunds. Our loving fosters will provide them with shelter, food, and love. Registration can be completed
+            online or in person on the day of the event.
+        </div>
+        <div flex="75">
+            <span class="md-title">Itinerary</span>
+            <ul>
+                <li>9:00am Registration</li>
+                <li>10:00am Wheels Up</li>
+                <li>11:00am Pit Stop 1</li>
+                <li>12:00pm Pit Stop 2</li>
+                <li>1:00pm Hill Country Distillery</li>
+            </ul>
+        </div>
+        <div flex="85">
+            There will be great food, awesome raffles, sale items, and a chance to ride along the beautiful scenic hill country. All
+            of this to help support the dachshunds of Diamond Dachshund Rescue.
+        </div>
+    </main>
+    </md-content>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left" md-component-id="menu" md-whiteframe="4">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <h2>Route</h2>
+                <h2>Registration</h2>
+                <h2>Sponsers</h2>
+            </md-content>
+        </md-sidenav>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+    <!-- my application bootstrap  -->
+    <script type="text/javascript">
+        angular.module('h4wd', ['ngMaterial'])
+            .controller('main', ($mdSidenav) => {
+                let vm = {};
+                vm.toggleMenu = function() {
+                    $mdSidenav('menu').toggle();
+                };
+                return vm;
+            });
+
+        angular
+    </script>
+</body>
+</html>
